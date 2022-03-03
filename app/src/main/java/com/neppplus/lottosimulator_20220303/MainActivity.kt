@@ -28,6 +28,14 @@ import kotlinx.android.synthetic.main.activity_main.*
     var mEarnMoney = 0L // 30억 이상의 당첨 대비. Long 타입으로 설정.
 
 
+//      각 등수별 횟수 카운팅 변수
+    var rankCount1 = 0
+    var rankCount2 = 0
+    var rankCount3 = 0
+    var rankCount4 = 0
+    var rankCount5 = 0
+    var rankCountFail = 0
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -148,24 +156,34 @@ class MainActivity : AppCompatActivity() {
         when(correctCount){
             6 -> {
                 mEarnMoney += 3000000000
+
+//                1등 횟수 증가
+                rankCount1++
             }
             5 -> {
 
 //                보너스 번호를 맞췄는지 ? => 보너스번호가 내 번호 목록에 들어있나?
                 if (mMyNumbers.contains(mBonusNum)){
                     mEarnMoney += 50000000
+                    rankCount2++
                 }
                 else{
                     mEarnMoney += 2000000
+                    rankCount3++
                 }
 
             }
             4 -> {
                 mEarnMoney += 50000
+                rankCount4++
             }
             3 -> {
 //                5등 -> 5천원을 사용한 돈을 줄여주자.
                 mUseMoney -= 5000
+                rankCount5++
+            }
+            else -> {
+                rankCountFail++
             }
 
         }
@@ -173,6 +191,14 @@ class MainActivity : AppCompatActivity() {
 //        사용 금액  / 당첨금액을 텍스트뷰에 각각 반영
         txtUsedMoney.text = "${NumberFormat.getInstance().format(mUseMoney)}원"
         txtEarnMoney.text = "${NumberFormat.getInstance().format(mEarnMoney)}원"
+
+//        등수별 횟수도 텍스트뷰 반영
+        txtRankCoount1.text = "${rankCount1}회"
+        txtRankCoount2.text = "${rankCount2}회"
+        txtRankCoount3.text = "${rankCount3}회"
+        txtRankCoount4.text = "${rankCount4}회"
+        txtRankCoount5.text = "${rankCount5}회"
+        txtRankCoountFail.text = "${rankCountFail}회"
 
 
     }
