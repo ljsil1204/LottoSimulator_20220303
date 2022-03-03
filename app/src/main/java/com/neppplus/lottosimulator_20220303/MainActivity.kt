@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 //   컴퓨터가 뽑은 당첨번호 6개를 저장할 ArrayList
     val mWinNumberList = ArrayList<Int>()
+    var mBonusNum = 0; // 보너스 번호는, 매 판마다 새로 뽑아야 함. 변경 소지 0, 화면이 어딘지는 줄 필요 x, 바로 대입 var
 
 //   당첨번호를 보여줄 6개의 텍스트뷰를 담아둘 ArrayList
     val mWinNumTextViewList = ArrayList<TextView>()
@@ -76,9 +77,21 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//        보너스 번호 생성
+//        보너스 번호 생성 -> 1~45 중 하나 , 당첨번호와 겹치지 않게.
+        while (true){
+
+            val ramdomNum = (Math.random() * 45 + 1).toInt()
+
+            if (!mWinNumberList.contains(ramdomNum)){
+//                겹치지 않는 숫자 뽑음.
+                mBonusNum = ramdomNum
+                break
+            }
+
+        }
 
 //        텍스트뷰 배치
+        txtBonusNum.text = mBonusNum.toString()
 
     }
 
