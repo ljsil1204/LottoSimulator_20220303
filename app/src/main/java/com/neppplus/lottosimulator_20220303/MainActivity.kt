@@ -1,12 +1,12 @@
 package com.neppplus.lottosimulator_20220303
 
-import android.icu.text.NumberFormat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.NumberFormat
 
 //    내 번호 6개 저장
 //    코틀린은 단순 배열 초기화 int[] arr = {}; 문법 지원 x
@@ -45,6 +45,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupEvents() {
+
+        btnAutoBuy.setOnClickListener {
+
+//            처음 눌리면 > 반복 구매 시작 > 1천만원 사용할때까지 반복
+//            단순 반복 > 반복 속도가 너무 빨라서, UI가 멈춘것 처럼 보인다.
+
+            while(true){
+
+                buyLotto()
+
+                if(mUseMoney >= 100000000){
+
+                    break
+
+                }
+
+            }
+        }
 
         btnBuyLotto.setOnClickListener {
 
