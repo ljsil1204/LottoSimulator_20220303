@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 //    내 번호 6개 저장
@@ -107,8 +108,50 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkLottoRank () {
 
+
+//        임시 당첨번호
+//        mWinNumberList.clear()
+//        mWinNumberList.add(13)
+//        mWinNumberList.add(17)
+//        mWinNumberList.add(20)
+//        mWinNumberList.add(31)
+//        mWinNumberList.add(7)
+//        mWinNumberList.add(41)
+
+
 //        내 번호 목록 / 당첨번호 목록 중, 같은 숫자가 몇개?
         var correctCount = 0;
+
+//        내 번호를 하나씩 조회
+        for (myNum in mMyNumbers){
+
+//            당첨번호를 맞췄는가?  => 당첨번호 목록에 내 번호가 들어있나?
+
+            if (mWinNumberList.contains(myNum)){
+                correctCount++
+            }
+
+        }
+
+//        맞춘 개수에 따른 등수 판정
+        when(correctCount){
+            6 -> {
+                Toast.makeText(this, "1등입니다.", Toast.LENGTH_SHORT).show()
+            }
+            5 -> {
+                Toast.makeText(this, "임시 -3등입니다.", Toast.LENGTH_SHORT).show()
+            }
+            4 -> {
+                Toast.makeText(this, "4등입니다.", Toast.LENGTH_SHORT).show()
+            }
+            3 -> {
+                Toast.makeText(this, "5등입니다.", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                Toast.makeText(this, "낙첨입니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
     }
 
