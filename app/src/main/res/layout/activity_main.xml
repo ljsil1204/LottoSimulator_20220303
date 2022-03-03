@@ -188,6 +188,134 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1등 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2등 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3등 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4등 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoount4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5등 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoount5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="낙첨 : "/>
+
+        <TextView
+            android:id="@+id/txtRankCoountFail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 회"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+
+
 
 
 </LinearLayout>
