@@ -21,6 +21,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 //   당첨번호를 보여줄 6개의 텍스트뷰를 담아둘 ArrayList
     val mWinNumTextViewList = ArrayList<TextView>()
 
+
+//    사용한 금액, 당첨된 금액 합산 변수
+    var mUseMoney = 0
+    var mEarnMoney = 0L // 30억 이상의 당첨 대비. Long 타입으로 설정.
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +46,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buyLotto(){
+
+//        사용한 금액 늘려주기
+        mUseMoney += 1000
+
 
 //        6개의 당첨번호
 //        코틀린의 for문은, for-each문법으로 기반.
@@ -136,28 +146,27 @@ class MainActivity : AppCompatActivity() {
 //        맞춘 개수에 따른 등수 판정
         when(correctCount){
             6 -> {
-                Toast.makeText(this, "1등입니다.", Toast.LENGTH_SHORT).show()
+                mEarnMoney += 3000000000
             }
             5 -> {
 
 //                보너스 번호를 맞췄는지 ? => 보너스번호가 내 번호 목록에 들어있나?
                 if (mMyNumbers.contains(mBonusNum)){
-                    Toast.makeText(this, "2등입니다.", Toast.LENGTH_SHORT).show()
+                    mEarnMoney += 50000000
                 }
                 else{
-                    Toast.makeText(this, "3등입니다.", Toast.LENGTH_SHORT).show()
+                    mEarnMoney += 2000000
                 }
 
             }
             4 -> {
-                Toast.makeText(this, "4등입니다.", Toast.LENGTH_SHORT).show()
+                mEarnMoney += 50000
             }
             3 -> {
-                Toast.makeText(this, "5등입니다.", Toast.LENGTH_SHORT).show()
+//                5등 -> 5천원을 사용한 돈을 줄여주자.
+                mUseMoney -= 5000
             }
-            else -> {
-                Toast.makeText(this, "낙첨입니다.", Toast.LENGTH_SHORT).show()
-            }
+
         }
 
 
