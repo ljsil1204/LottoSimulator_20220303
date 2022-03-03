@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
     var rankCount5 = 0
     var rankCountFail = 0
 
+
+//    자동인가요?
+    var isAutoNow = false
+
 //  Handler로 쓸레드에 할일 할당 (postDelayed - 일정 시간 지난 뒤에 할일 할당)
 
     lateinit var mHandler : Handler
@@ -86,8 +90,24 @@ class MainActivity : AppCompatActivity() {
 //            1회 로또 구매 명령 > 완료되면 다시 1회 로또 구매 >  ... 연속 클릭을 자동으로 하는 느낌
 
 
+            if (!isAutoNow){
+
 //            핸들러에게 , 할일을 처음 등록 (할일 시작)
-            mHandler.post(buyLottoRunnable)
+                mHandler.post(buyLottoRunnable)
+
+//                자동이 돌고 있다는 표싯.
+                isAutoNow = true
+                btnAutoBuy.text = "자동 구매 중단하기"
+
+            }
+            else{
+//                핸들러에 등록된 다음 할일 (구매 ) 제거
+                mHandler.removeCallbacks(buyLottoRunnable)
+
+                isAutoNow = false
+                btnAutoBuy.text = "자동 구매 재개하기"
+            }
+
 
 //            단순 반복 > 반복 속도가 너무 빨라서, UI가 멈춘것 처럼 보인다. (while)
 
