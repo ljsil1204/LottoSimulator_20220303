@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
+//   컴퓨터가 뽑은 당첨번호 6개를 저장할 ArrayList
+    val mWinNumberList = ArrayList<Int>()
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,12 @@ class MainActivity : AppCompatActivity() {
 
 //        6개의 당첨번호
 //        코틀린의 for문은, for-each문법으로 기반.
+
+//        ArrayList는 목록을 계속 누적 가능.
+//        당첨번호 뽑기 전에, 기존의 당첨번호는 전부 삭제하고 다시 뽑자.
+
+        mWinNumberList.clear()
+
         for ( i in 0 until 6  ) {
 
 //            괜찮은 번호가 나올 때 까지 무한 반복
@@ -37,8 +46,11 @@ class MainActivity : AppCompatActivity() {
                 val randomNum = (Math.random() * 45 + 1).toInt()
 
 //                중복 검사 통과 시 while 깨자
+                if( !mWinNumberList.contains(randomNum) ) {
 
-                if(true) {
+//                    당첨번호로, 뽑은 랜덤 숫자 등록
+                    mWinNumberList.add( randomNum )
+
                     break
                 }
 
@@ -47,6 +59,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        만들어진 당첨번호 6개를 -> 텍스트뷰에 표현
+
+        Log.d("당첨번호", mWinNumberList.toString())
+
+        for (winNum in mWinNumberList){
+
+        }
 
 //        보너스 번호 생성
 
