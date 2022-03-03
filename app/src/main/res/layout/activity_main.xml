@@ -22,19 +22,14 @@
 
 
         <TextView
+            android:id="@+id/txtWinNum01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="\?"
             android:textSize="25sp"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="\?"
-            android:textSize="25sp"/>
-
-        <TextView
+            android:id="@+id/txtWinNum02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -42,6 +37,7 @@
             android:textSize="25sp"/>
 
         <TextView
+            android:id="@+id/txtWinNum03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -49,6 +45,7 @@
             android:textSize="25sp"/>
 
         <TextView
+            android:id="@+id/txtWinNum04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -56,6 +53,15 @@
             android:textSize="25sp"/>
 
         <TextView
+            android:id="@+id/txtWinNum05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="\?"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/txtWinNum06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -70,6 +76,7 @@
             android:textSize="25sp"/>
 
         <TextView
+            android:id="@+id/txtBonusNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -133,6 +140,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnBuyLotto"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
