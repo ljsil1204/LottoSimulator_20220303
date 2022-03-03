@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.text.NumberFormat
 
 
-
 class MainActivity : AppCompatActivity() {
 
     //    내 번호 6개 저장
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     var rankCountFail = 0
 
 
-//    자동인가요?
+//    현재 자동 구매가 진행중인지 구별하는 변수
     var isAutoNow = false
 
 //  Handler로 쓸레드에 할일 할당 (postDelayed - 일정 시간 지난 뒤에 할일 할당)
