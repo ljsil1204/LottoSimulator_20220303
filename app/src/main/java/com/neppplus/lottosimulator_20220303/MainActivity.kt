@@ -1,5 +1,6 @@
 package com.neppplus.lottosimulator_20220303
 
+import android.icu.text.NumberFormat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -168,6 +169,10 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+//        사용 금액  / 당첨금액을 텍스트뷰에 각각 반영
+        txtUsedMoney.text = "${NumberFormat.getInstance().format(mUseMoney)}원"
+        txtEarnMoney.text = "${NumberFormat.getInstance().format(mEarnMoney)}원"
 
 
     }
