@@ -6,6 +6,13 @@ import android.util.Log
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
+//    내 번호 6개 저장
+//    코틀린은 단순 배열 초기화 int[] arr = {}; 문법 지원 x
+
+//    숫자 목록을 파라미터로 넣으면 > Array로 만들어주는 함수 실행
+    val mMyNumbers = arrayOf(13, 17, 20 , 31, 7 , 41)
+
+
 //   컴퓨터가 뽑은 당첨번호 6개를 저장할 ArrayList
     val mWinNumberList = ArrayList<Int>()
     var mBonusNum = 0; // 보너스 번호는, 매 판마다 새로 뽑아야 함. 변경 소지 0, 화면이 어딘지는 줄 필요 x, 바로 대입 var
@@ -93,7 +100,18 @@ class MainActivity : AppCompatActivity() {
 //        텍스트뷰 배치
         txtBonusNum.text = mBonusNum.toString()
 
+//        내숫자 6개와 비교, 등수 판정
+        checkLottoRank()
+
     }
+
+    private fun checkLottoRank () {
+
+//        내 번호 목록 / 당첨번호 목록 중, 같은 숫자가 몇개?
+        var correctCount = 0;
+
+    }
+
 
     private fun setValues() {
 
